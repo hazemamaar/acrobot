@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.WelcomeFragment">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager_onboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <com.zhpan.indicator.IndicatorView
+        android:id="@+id/indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewpager_onboard"
+        android:layout_marginTop="@dimen/_20sdp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/finish_btn"
+        android:layout_width="240dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:shadowRadius="5"
+        android:text="متابعه"
+        android:layout_marginTop="50dp"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        app:cornerRadius="@dimen/_20sdp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/indicator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/blue"
+        android:layout_marginBottom="5dp"
+        android:textSize="20sp" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/skip_btn"
+        android:layout_width="240dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:shadowRadius="5"
+        android:text="تخطي"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:cornerRadius="@dimen/_20sdp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/finish_btn"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/gray"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:textSize="20sp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
