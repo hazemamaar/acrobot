@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "515103103012",
+    "project_id": "acrobot-fb50e",
+    "storage_bucket": "acrobot-fb50e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515103103012:android:3d69760c11fa2bf4d5e0b1",
+        "android_client_info": {
+          "package_name": "com.example.acrobot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsvoLHMi5dUsGp9_2lTE97HodlkAXp-_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

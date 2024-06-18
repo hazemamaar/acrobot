@@ -1,8 +1,9 @@
 package com.example.acrobot.data.models
 
 data class RegisterModel(
-    val email:String,
-    val username:String,
-    val password:String
+    val name:String?="",
+    val email:String?="",
+    val password:String?="",
+    val mobilePhone:String?=""
 
 )

@@ -19,10 +19,23 @@
         android:id="@+id/formFragment"
         android:name="com.example.acrobot.ui.fragment.FormFragment"
         android:label="fragment_form"
-        tools:layout="@layout/fragment_form" />
+        tools:layout="@layout/fragment_form" >
+        <action
+            android:id="@+id/action_formFragment_to_resultDialogFragment"
+            app:destination="@id/resultDialogFragment" />
+    </fragment>
     <fragment
         android:id="@+id/timeLineFragment"
         android:name="com.example.acrobot.ui.fragment.TimeLineFragment"
         android:label="fragment_time_line"
         tools:layout="@layout/fragment_time_line" />
+    <dialog
+        android:id="@+id/resultDialogFragment"
+        android:name="com.example.acrobot.ui.fragment.ResultDialogFragment"
+        android:label="ResultDialogFragment" >
+        <argument
+            android:name="precentage"
+            app:argType="float"
+            android:defaultValue="70.0" />
+    </dialog>
 </navigation>

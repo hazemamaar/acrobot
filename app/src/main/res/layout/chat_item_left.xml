@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:padding="8dp"
+    android:layoutDirection="ltr"
+    android:layout_height="wrap_content">
+<de.hdodenhof.circleimageview.CircleImageView
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:id="@+id/profile_image"
+    android:src="@drawable/home_profile"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:civ_border_color="@color/green"
+    app:civ_border_width="@dimen/_2sdp"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/profile_image"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Hazem"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/name"
+        android:textSize="18sp"
+        android:padding="8dp"
+        android:layout_centerVertical="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintStart_toEndOf="@id/profile_image"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:text="Hi"
+        android:layout_alignTop="@id/name"
+        android:id="@+id/show_message"
+        android:textSize="18sp"
+        android:padding="8dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/background_left"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,4 +2,9 @@
     <string name="app_name">Acrobot</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_have_an_account"><u>already have an account?</u></string>
+    <string name="subtitle_upload_image">This data will be displayed in your account</string>
+    <string name="find_your_password"><u>Find Your Password?</u></string>
+    <string name="don_t_have_an_account"><u>Don\'t have an account?</u></string>
 </resources>

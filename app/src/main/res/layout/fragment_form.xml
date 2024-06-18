@@ -1,14 +1,594 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.FormFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+  <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/_230sdp"
+      android:src="@drawable/form_image"
+      android:scaleType="fitXY"
+      />
+ <androidx.cardview.widget.CardView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="@dimen/_20sdp"
+     android:layout_marginTop="@dimen/_20sdp"
+     android:layout_marginEnd="@dimen/_20sdp"
+     app:cardCornerRadius="@dimen/_10sdp"
+     >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    >
+ <TextView
+     android:id="@+id/q1"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:fontFamily="@font/poppins"
+     android:textSize="@dimen/_16ssp"
+     android:textColor="@color/black"
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+     app:layout_constraintTop_toTopOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintEnd_toEndOf="parent"
+     android:text="Have you been able to stop completing the rings that you suddenly used to compete in?"
+     />
+ <RadioGroup
+     android:id="@+id/radiosQ1"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:layout_gravity="left"
+     android:inputType="text"
+     android:orientation="vertical"
+     app:layout_constraintTop_toBottomOf="@id/q1"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintEnd_toEndOf="parent"
+     >
 
-</FrameLayout>
+  <RadioButton
+      android:id="@+id/yesQ1"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="left"
+      android:button="@null"
+      android:drawablePadding="30dp"
+      android:drawableLeft="@android:drawable/btn_radio"
+      android:text="Yes"
+      android:textColor="@color/black"
+      android:textSize="@dimen/_20ssp"
+      android:checked="true"/>
+
+  <RadioButton
+      android:id="@+id/NoQ1"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:button="@null"
+      android:drawablePadding="30dp"
+      android:drawableLeft="@android:drawable/btn_radio"
+      android:text="No"
+      android:textColor="@color/black"
+      android:textSize="@dimen/_20ssp" />
+
+
+ </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>
+ </androidx.cardview.widget.CardView>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_20sdp"
+    android:layout_marginTop="@dimen/_20sdp"
+    android:layout_marginEnd="@dimen/_20sdp"
+    app:cardCornerRadius="@dimen/_10sdp"
+    >
+
+
+ <androidx.constraintlayout.widget.ConstraintLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_margin="@dimen/_10sdp"
+     >
+  <TextView
+      android:id="@+id/q2"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/poppins"
+      android:textSize="@dimen/_17ssp"
+      android:textColor="@color/black"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:text="Have you become unable to wear your shoes, or has your foot size changed suddenly?
+"
+      />
+  <RadioGroup
+      android:id="@+id/radiosQ2"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="right"
+      android:inputType="text"
+      android:orientation="vertical"
+      app:layout_constraintTop_toBottomOf="@id/q2"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      >
+
+   <RadioButton
+       android:id="@+id/yesQ2"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="right"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:drawableLeft="@android:drawable/btn_radio"
+       android:text="Yes"
+       android:textColor="@color/black"
+       android:textSize="@dimen/_20ssp"
+       android:checked="true"/>
+
+   <RadioButton
+       android:id="@+id/NoQ2"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:drawableLeft="@android:drawable/btn_radio"
+       android:text="No"
+       android:textColor="@color/black"
+       android:textSize="@dimen/_20ssp" />
+
+
+  </RadioGroup>
+ </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+ <androidx.cardview.widget.CardView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="@dimen/_20sdp"
+     android:layout_marginTop="@dimen/_20sdp"
+     android:layout_marginEnd="@dimen/_20sdp"
+     app:cardCornerRadius="@dimen/_10sdp"
+     >
+ <androidx.constraintlayout.widget.ConstraintLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_margin="@dimen/_10sdp"
+     >
+  <TextView
+      android:id="@+id/q3"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/poppins"
+      android:textSize="@dimen/_17ssp"
+      android:textColor="@color/black"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:text="Have you Noticed a sudden increase in the size of your hands or feet?"
+      />
+  <RadioGroup
+      android:id="@+id/radiosQ3"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="right"
+      android:inputType="text"
+      android:orientation="vertical"
+      app:layout_constraintTop_toBottomOf="@id/q3"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      >
+
+   <RadioButton
+       android:id="@+id/yesQ3"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="right"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:drawableLeft="@android:drawable/btn_radio"       android:text="Yes"
+       android:textColor="@color/black"
+       android:textSize="@dimen/_20ssp"
+       android:checked="true"/>
+
+   <RadioButton
+       android:id="@+id/NoQ3"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:drawableLeft="@android:drawable/btn_radio"       android:text="No"
+       android:textColor="@color/black"
+       android:textSize="@dimen/_20ssp" />
+
+
+  </RadioGroup>
+ </androidx.constraintlayout.widget.ConstraintLayout>
+ </androidx.cardview.widget.CardView>
+ <androidx.cardview.widget.CardView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="@dimen/_20sdp"
+     android:layout_marginTop="@dimen/_20sdp"
+     android:layout_marginEnd="@dimen/_20sdp"
+     app:cardCornerRadius="@dimen/_10sdp"
+     >
+ <androidx.constraintlayout.widget.ConstraintLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_margin="@dimen/_10sdp"
+     >
+  <TextView
+      android:id="@+id/q4"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/poppins"
+      android:textSize="@dimen/_17ssp"
+      android:textColor="@color/black"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:text="Have you ever experienced a widening of the space between your teeth after they were normal?"
+      />
+  <RadioGroup
+      android:id="@+id/radiosQ4"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="right"
+      android:inputType="text"
+      android:orientation="vertical"
+      app:layout_constraintTop_toBottomOf="@id/q4"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      >
+
+   <RadioButton
+       android:id="@+id/yesQ4"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="right"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:drawableLeft="@android:drawable/btn_radio"       android:text="Yes"
+       android:textColor="@color/black"       android:textSize="@dimen/_20ssp"
+       android:checked="true"
+       />
+
+   <RadioButton
+       android:id="@+id/NoQ4"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:drawableLeft="@android:drawable/btn_radio"       android:text="No"
+       android:textColor="@color/black"       android:textSize="@dimen/_20ssp" />
+
+
+  </RadioGroup>
+ </androidx.constraintlayout.widget.ConstraintLayout>
+ </androidx.cardview.widget.CardView>
+ <androidx.cardview.widget.CardView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="@dimen/_20sdp"
+     android:layout_marginTop="@dimen/_20sdp"
+     android:layout_marginEnd="@dimen/_20sdp"
+     app:cardCornerRadius="@dimen/_10sdp"
+     >
+ <androidx.constraintlayout.widget.ConstraintLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_margin="@dimen/_10sdp"
+     >
+  <TextView
+      android:id="@+id/q5"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/poppins"
+      android:textSize="@dimen/_17ssp"
+      android:textColor="@color/black"      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:text="Do you suffer from excessive sweating and change in body odor?
+"
+      />
+  <RadioGroup
+      android:id="@+id/radiosQ5"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="right"
+      android:inputType="text"
+      android:orientation="vertical"
+      app:layout_constraintTop_toBottomOf="@id/q5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      >
+
+   <RadioButton
+       android:id="@+id/yesQ5"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="right"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:drawableLeft="@android:drawable/btn_radio"       android:text="Yes"
+       android:textColor="@color/black"       android:checked="true"
+       android:textSize="@dimen/_20ssp" />
+
+   <RadioButton
+       android:id="@+id/NoQ5"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:drawableLeft="@android:drawable/btn_radio"       android:text="No"
+       android:textColor="@color/black"       android:textSize="@dimen/_20ssp" />
+
+
+  </RadioGroup>
+ </androidx.constraintlayout.widget.ConstraintLayout>
+ </androidx.cardview.widget.CardView>
+ <androidx.cardview.widget.CardView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="@dimen/_20sdp"
+     android:layout_marginTop="@dimen/_20sdp"
+     android:layout_marginEnd="@dimen/_20sdp"
+     app:cardCornerRadius="@dimen/_10sdp"
+     >
+ <androidx.constraintlayout.widget.ConstraintLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_margin="@dimen/_10sdp"
+     >
+  <TextView
+      android:id="@+id/q6"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/poppins"
+      android:textSize="@dimen/_17ssp"
+      android:textColor="@color/black"      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:text="Have you noticed a change in your voice, becoming deeper and harsher?"
+      />
+  <RadioGroup
+      android:id="@+id/radiosQ6"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="right"
+      android:inputType="text"
+      android:orientation="vertical"
+      app:layout_constraintTop_toBottomOf="@id/q6"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      >
+
+   <RadioButton
+       android:id="@+id/yesQ6"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="right"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:drawableLeft="@android:drawable/btn_radio"
+       android:text="Yes"
+       android:textColor="@color/black"       android:checked="true"
+       android:textSize="@dimen/_20ssp" />
+
+   <RadioButton
+       android:id="@+id/NoQ6"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:drawableLeft="@android:drawable/btn_radio"       android:text="No"
+       android:textColor="@color/black"       android:textSize="@dimen/_20ssp" />
+
+
+  </RadioGroup>
+ </androidx.constraintlayout.widget.ConstraintLayout>
+ </androidx.cardview.widget.CardView>
+ <androidx.cardview.widget.CardView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="@dimen/_20sdp"
+     android:layout_marginTop="@dimen/_20sdp"
+     android:layout_marginEnd="@dimen/_20sdp"
+     app:cardCornerRadius="@dimen/_10sdp"
+     >
+ <androidx.constraintlayout.widget.ConstraintLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_margin="@dimen/_10sdp"
+     >
+  <TextView
+      android:id="@+id/q7"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/poppins"
+      android:textSize="@dimen/_17ssp"
+      android:textColor="@color/black"      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:text="Do you suffer from joint pain, tightness, and protrusion of the jaw bones?"
+      />
+  <RadioGroup
+      android:id="@+id/radiosQ7"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="right"
+      android:inputType="text"
+      android:orientation="vertical"
+      app:layout_constraintTop_toBottomOf="@id/q7"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      >
+
+   <RadioButton
+       android:id="@+id/yesQ7"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="right"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:checked="true"
+       android:drawableLeft="@android:drawable/btn_radio"       android:text="Yes"
+       android:textColor="@color/black"       android:textSize="@dimen/_20ssp" />
+
+   <RadioButton
+       android:id="@+id/NoQ7"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:drawableLeft="@android:drawable/btn_radio"       android:text="No"
+       android:textColor="@color/black"       android:textSize="@dimen/_20ssp" />
+
+
+  </RadioGroup>
+ </androidx.constraintlayout.widget.ConstraintLayout>
+ </androidx.cardview.widget.CardView>
+ <androidx.cardview.widget.CardView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="@dimen/_20sdp"
+     android:layout_marginTop="@dimen/_20sdp"
+     android:layout_marginEnd="@dimen/_20sdp"
+     app:cardCornerRadius="@dimen/_10sdp"
+     >
+ <androidx.constraintlayout.widget.ConstraintLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_margin="@dimen/_10sdp"
+     >
+  <TextView
+      android:id="@+id/q8"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/poppins"
+      android:textSize="@dimen/_17ssp"
+      android:textColor="@color/black"      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:text="Have you noticed an increase in your skin texture despite your stable weight?
+"
+      />
+  <RadioGroup
+      android:id="@+id/radiosQ8"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="right"
+      android:inputType="text"
+      android:orientation="vertical"
+      app:layout_constraintTop_toBottomOf="@id/q8"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      >
+
+   <RadioButton
+       android:id="@+id/yesQ8"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="right"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:checked="true"
+       android:drawableLeft="@android:drawable/btn_radio"       android:text="Yes"
+       android:textColor="@color/black"       android:textSize="@dimen/_20ssp" />
+
+   <RadioButton
+       android:id="@+id/NoQ8"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:drawableLeft="@android:drawable/btn_radio"       android:text="No"
+       android:textColor="@color/black"       android:textSize="@dimen/_20ssp" />
+
+
+  </RadioGroup>
+ </androidx.constraintlayout.widget.ConstraintLayout>
+ </androidx.cardview.widget.CardView>
+ <androidx.cardview.widget.CardView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="@dimen/_20sdp"
+     android:layout_marginTop="@dimen/_20sdp"
+     android:layout_marginEnd="@dimen/_20sdp"
+     app:cardCornerRadius="@dimen/_10sdp"
+     >
+ <androidx.constraintlayout.widget.ConstraintLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_margin="@dimen/_10sdp"
+     >
+  <TextView
+      android:id="@+id/q9"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/poppins"
+      android:textSize="@dimen/_17ssp"
+      android:textColor="@color/black"      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:text="Have you noticed/noticed an interruption in your menstrual cycle/erectile dysfunction?"
+      />
+  <RadioGroup
+      android:id="@+id/radiosQ9"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="right"
+      android:inputType="text"
+      android:orientation="vertical"
+      app:layout_constraintTop_toBottomOf="@id/q9"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      >
+
+   <RadioButton
+       android:id="@+id/yesQ9"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="right"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:drawableLeft="@android:drawable/btn_radio"       android:text="Yes"
+       android:checked="true"
+       android:textColor="@color/black"       android:textSize="@dimen/_20ssp" />
+
+   <RadioButton
+       android:id="@+id/NoQ9"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:button="@null"
+       android:drawablePadding="30dp"
+       android:drawableLeft="@android:drawable/btn_radio"       android:text="No"
+       android:textColor="@color/black"       android:textSize="@dimen/_20ssp" />
+
+
+  </RadioGroup>
+ </androidx.constraintlayout.widget.ConstraintLayout>
+ </androidx.cardview.widget.CardView>
+ <com.google.android.material.button.MaterialButton
+     android:id="@+id/btn_login"
+     style="@style/button_style"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="@dimen/_13sdp"
+     android:layout_marginTop="@dimen/_20sdp"
+     android:layout_marginEnd="@dimen/_13sdp"
+     android:text="Submit"
+     android:backgroundTint="@color/green"
+     android:layout_marginBottom="@dimen/_20sdp"
+     />
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>

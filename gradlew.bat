@@ -2,7 +2,7 @@
 @rem Copyright 2015 the original author or authors.
 @rem
 @rem Licensed under the Apache License, Version 2.0 (the "License");
-@rem you may not use this file except in compliance with the License.
+@rem you may Not use this file except in compliance with the License.
 @rem You may obtain a copy of the License at
 @rem
 @rem      https://www.apache.org/licenses/LICENSE-2.0
@@ -43,7 +43,7 @@ set JAVA_EXE=java.exe
 if "%ERRORLEVEL%" == "0" goto execute
 
 echo.
-echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
+echo ERROR: JAVA_HOME is Not set and No 'java' command could be found in your PATH.
 echo.
 echo Please set the JAVA_HOME variable in your environment to match the
 echo location of your Java installation.
@@ -80,7 +80,7 @@ if "%ERRORLEVEL%"=="0" goto mainEnd
 :fail
 rem Set variable GRADLE_EXIT_CONSOLE if you need the _script_ return code instead of
 rem the _cmd.exe /c_ return code!
-if  not "" == "%GRADLE_EXIT_CONSOLE%" exit 1
+if  Not "" == "%GRADLE_EXIT_CONSOLE%" exit 1
 exit /b 1
 
 :mainEnd

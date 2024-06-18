@@ -6,23 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.HomeFragment">
 
-    <ImageView
-        android:id="@+id/header_top"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        android:src="@drawable/ellipse_3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginEnd="@dimen/_20sdp"
-        android:backgroundTint="@color/dark_blue"
+        android:backgroundTint="@color/green"
         app:cardCornerRadius="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -38,56 +30,55 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:fontFamily="@font/poppins"
-                android:text="Hazem Ammar"
+                android:text="Find an answer to\nyour doubts"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_18ssp"
+                android:textSize="@dimen/_20ssp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
-            <TextView
+
+            <ImageView
+                android:id="@+id/profile_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins"
-                android:text="مرحبا"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_15ssp"
+                android:src="@drawable/profile_home"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/user_name" />
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/home_profile"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/filter"
+                app:layout_constraintEnd_toStartOf="@id/profile_image"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header_top">
+        app:layout_constraintTop_toBottomOf="@id/header">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
             <TextView
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:fontFamily="@font/poppins"
                 android:text="Acromegaly"
-                android:textColor="@color/dark_blue"
+                android:textColor="#53E88B"
                 android:textSize="@dimen/_20ssp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -95,19 +86,90 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/text_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_17sdp"
+                android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_17sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
                 android:fontFamily="@font/poppins"
-                android:text=" اضطراب تضخم الأطراف هو اضطراب هرموني ينشأ عندما تفرز الغدة النخامية كمية كبيرة للغاية من هرمون النمو أثناء مرحلة البلوغ.\n
-عندما يفرز جسمك كمية كبيرة من هرمون النمو، يزداد حجم عظامك عن الحجم الطبيعي. في مرحلة الطفولة، يتسبب هذا الاضطراب في زيادة الطول عن المعدل الطبيعي، وتُعرف هذه الحالة باسم العملقة.\n أما في مرحلة البلوغ فلا يحدث تغيير في الطول، لكن تقتصر زيادة حجم العظام على عظام اليدين والقدمين والوجه، وتُعرف هذه الحالة باسم تضخم الأطراف."
+                android:gravity="center"
+                android:text="Most cases of acromegaly are caused by a Noncancerous tumor (adeNoma) in the \n pituitary gland."
                 android:textColor="@color/black"
                 android:textSize="@dimen/_11ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+            <TextView
+                android:id="@+id/text_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:text="The tumor secretes excessive amounts of growth hormone; Which leads to the emergence of many signs and symptoms of acromegaly disorder. Some of the symptoms of acromegaly disorder, such as headaches and poor vision, appear as a result of the tumor pressing on nearby brain tissue. Enlargement of facial features, including the facial bones, lips, Nose, and tongue. This disease is primarily caused by A defect in the pituitary gland may occur in a person, and this person may Not Notice until he reaches a late stage, where the limbs and body begin to grow at a gradual rate. Even the people closest to him may Not Notice that there is a problem with this person."
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_1" />
+            <TextView
+                android:id="@+id/text_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:fontFamily="@font/poppins"
+                android:gravity="start"
+                android:text="With the latest advancements in artificial intelligence, diagNosing acromegaly has become significantly more efficient. AI techNology can Now analyze medical data and identify the early signs of this condition with great precision. By uploading an image, the system can provide a comprehensive analysis that aids in early diagNosis. This allows for faster and more accurate detection compared to traditional methods. The integration of AI in healthcare is revolutionizing how we approach such diseases, making the process more accessible and reliable. To get started, simply upload your photo for a detailed assessment."
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_home" />
+
+
+
+            <ImageView
+                android:id="@+id/image_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/text_2"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/photo_home"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="visible"
+                android:layout_marginBottom="@dimen/_12sdp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_next"
+                android:layout_width="@dimen/_157sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:backgroundTint="#0BBFAA"
+                android:fontFamily="@font/abhaya_libre_extrabold"
+                android:shadowRadius="5"
+                android:text="Test By Photo"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/_17ssp"
+                android:visibility="visible"
+                app:cornerRadius="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_3"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 

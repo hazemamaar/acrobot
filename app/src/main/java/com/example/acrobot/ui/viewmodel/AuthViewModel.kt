@@ -5,24 +5,30 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.acrobot.common.Resource
 import com.example.acrobot.data.models.RegisterModel
+import com.example.acrobot.data.models.RegistrationResponse
 import com.example.acrobot.data.models.TokenModel
 import com.example.acrobot.data.remote.IApiService
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class AuthViewModel @Inject constructor(private val apiService: IApiService) : ViewModel() {
-    var registerFlow: MutableSharedFlow<Resource<String>> = MutableSharedFlow()
-    var loginFlow: MutableSharedFlow<Resource<String>> = MutableSharedFlow()
+    var registerFlow: MutableStateFlow<Resource<RegistrationResponse>> = MutableStateFlow(Resource.Success(
+        RegistrationResponse()
+    ))
+    var loginFlow: MutableStateFlow<Resource<TokenModel>> = MutableStateFlow(Resource.Success(TokenModel()))
     fun login(registerModel: RegisterModel) {
 
         viewModelScope.launch {
+
             loginFlow.emit(Resource.Loading())
-            if (apiService.login(registerModel).code() == 200) {
-                Log.e("success", "login: ${apiService.login(registerModel).code()}", )
-                val token = apiService.login(registerModel).body()!!.token
+            val call =apiService.login(registerModel)
+            if (call.code() in 200..299) {
+                val token :TokenModel = call.body()!!
                 loginFlow.emit(Resource.Success(token))
             }else{
                 loginFlow.emit(Resource.Error("Invalid credentials"))
@@ -33,14 +39,15 @@ class AuthViewModel @Inject constructor(private val apiService: IApiService) : V
     fun registration(registerModel: RegisterModel) {
 
         viewModelScope.launch {
-            loginFlow.emit(Resource.Loading())
-            if (apiService.registration(registerModel).code() == 200) {
-                Log.e("success", "login: ${apiService.registration(registerModel).code()}", )
-                val message = apiService.registration(registerModel).body()!!
-                registerFlow.emit(Resource.Success(message))
+            registerFlow.emit(Resource.Loading())
+            val call =apiService.registration(registerModel)
+            Log.e("hazoom", "registration: $call", )
+            if (call.code() in 200..299) {
+                    val message = call.body()!!
+                Log.e("hazoom", "registration: $message", )
+                    registerFlow.emit(Resource.Success(message))
             }else{
-                val message = apiService.registration(registerModel).body()!!
-                registerFlow.emit(Resource.Error(message))
+                registerFlow.emit(Resource.Error("Failed to Registered ,Please try again"))
 
             }
         }

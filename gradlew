@@ -4,7 +4,7 @@
 # Copyright 2015 the original author or authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
+# you may Not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
 #      https://www.apache.org/licenses/LICENSE-2.0
@@ -64,7 +64,7 @@ die () {
 cygwin=false
 msys=false
 darwin=false
-nonstop=false
+Nonstop=false
 case "`uname`" in
   CYGWIN* )
     cygwin=true
@@ -75,8 +75,8 @@ case "`uname`" in
   MINGW* )
     msys=true
     ;;
-  NONSTOP* )
-    nonstop=true
+  NoNSTOP* )
+    Nonstop=true
     ;;
 esac
 
@@ -99,14 +99,14 @@ location of your Java installation."
     fi
 else
     JAVACMD="java"
-    which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
+    which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is Not set and No 'java' command could be found in your PATH.
 
 Please set the JAVA_HOME variable in your environment to match the
 location of your Java installation."
 fi
 
 # Increase the maximum file descriptors if we can.
-if [ "$cygwin" = "false" -a "$darwin" = "false" -a "$nonstop" = "false" ] ; then
+if [ "$cygwin" = "false" -a "$darwin" = "false" -a "$Nonstop" = "false" ] ; then
     MAX_FD_LIMIT=`ulimit -H -n`
     if [ $? -eq 0 ] ; then
         if [ "$MAX_FD" = "maximum" -o "$MAX_FD" = "max" ] ; then
@@ -114,10 +114,10 @@ if [ "$cygwin" = "false" -a "$darwin" = "false" -a "$nonstop" = "false" ] ; then
         fi
         ulimit -n $MAX_FD
         if [ $? -ne 0 ] ; then
-            warn "Could not set maximum file descriptor limit: $MAX_FD"
+            warn "Could Not set maximum file descriptor limit: $MAX_FD"
         fi
     else
-        warn "Could not query maximum file descriptor limit: $MAX_FD_LIMIT"
+        warn "Could Not query maximum file descriptor limit: $MAX_FD_LIMIT"
     fi
 fi
 
@@ -152,7 +152,7 @@ if [ "$cygwin" = "true" -o "$msys" = "true" ] ; then
         CHECK2=`echo "$arg"|egrep -c "^-"`                                 ### Determine if an option
 
         if [ $CHECK -ne 0 ] && [ $CHECK2 -eq 0 ] ; then                    ### Added a condition
-            eval `echo args$i`=`cygpath --path --ignore --mixed "$arg"`
+            eval `echo args$i`=`cygpath --path --igNore --mixed "$arg"`
         else
             eval `echo args$i`="\"$arg\""
         fi

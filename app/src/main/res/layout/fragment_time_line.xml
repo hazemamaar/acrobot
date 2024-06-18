@@ -1,14 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.TimeLineFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/container_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre_extrabold"
+                android:text="Comprehensive Management and Considerations for Acromegaly: A Multidisciplinary Approach"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/inter"
+                android:text="Acromegaly is a rare disease most often caused by the prolonged secretion of excess growth hormone from a pituitary adenoma. The disease is associated with multiple significant comorbidities and increased mortality. The delay to diagnosis is often long. This may be"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/inter"
+                android:text="because of low disease awareness among health care professionals, the insidious onset of differentiating features, and because patients are likely to present with complaints typical of other conditions more frequently seen in primary care. Early identification of acromegaly facilitates prompt treatment initiation and may minimize the permanent effects of excess growth hormone. The primary treatment for many patients will be pituitary surgery, although not all patients will be eligible for surgery or achieve a surgical cure. If biochemical control is not achieved following surgery, other treatment options include medical therapy and radiation therapy. Improved biochemical control may only alleviate rather than reverse the associated comorbidities. Thus, lifelong monitoring of patient health is needed, with particular attention to the management of cardiovascular risk factors. It is additionally important to consider the impact of both disease and treatment on patients’ quality of life and minimize that impact where possible, but particularly for chronic therapies. For the majority of patients, chronic therapy is likely to include somatostatin analog injections. In some circumstances, it may be possible to extend the dosing interval of the analog once good biochemical control is achieved. Additional convenience may be gained from the possibility of self-/partner administration of treatment or administration of treatment by a health care professional at home. Overall, it is clear that the care of patients with acromegaly requires a highly coordinated approach involving numerous specialties (eg, endocrinology, surgery, cardiology). Further, patients’ needs must be at the core of management and every effort must be made to improve health care experiences and minimize treatment burdens."
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre_extrabold"
+                android:text="Raising Awareness and Understanding of Acromegaly: Symptoms, Treatment, and Quality of Life Considerations"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/inter"
+                android:text="Acromegaly results from the hypersecretion of growth hormone (GH), usually by a pituitary tumor.1 The average age at diagnosis is 40 years, with an equal number of men and women affected. The disease is uncommon, although the exact prevalence is unclear; a recent review noted estimates of between 40 and 130 cases per million adults.2 By comparison, in 2011, diabetes was estimated to affect 8.3% of adults (ie, 83,000 cases/million) aged over 20 years worldwide.3 A confirmed diagnosis of acromegaly commonly takes several years,4 leading to potentially serious consequences for patients’ health and well-being. These delays may be due partly to the fact that many of the clinical features of acromegaly are nonspecific and similar to those seen with other conditions more often seen in primary care, such as hypertension or diabetes. The delay may also be because of the insidious onset of differentiating symptoms, such as acral enlargement."
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/inter"
+                android:text="The purpose of this article is to raise awareness and increase understanding of acromegaly symptoms and treatment. As patients with acromegaly present with many different comorbidities (particularly cardiovascular disease, diabetes, hypertension, sleep apnea, and arthropathy), increased awareness is needed across a broad spectrum of health care specialties. It is hoped that familiarity with acromegaly signs and symptoms will facilitate early diagnosis and treatment, and potentially affect mortality and morbidity rates positively. It is also important that health care professionals understand the impact the disease and its treatment have on patients so that they may ensure quality of life (QoL) is addressed as part of the overall patient management plan. In this article, we describe the symptoms, causes, and treatment options according to the current medical guidelines for acromegaly,5–7 then the factors affecting patients’ QoL and acceptance of treatment."
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre_extrabold"
+                android:text="Understanding Acromegaly: Causes, Symptoms, and Treatment Options"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/inter"
+                android:text="Acromegaly is a hormonal disorder that develops when your pituitary gland produces too much growth hormone during adulthood.
+When you have too much growth hormone, your bones increase in size. In childhood, this leads to increased height and is called gigantism. But in adulthood, a change in height doesn't occur. Instead, the increase in bone size is limited to the bones of your hands, feet and face, and is called acromegaly."
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/inter"
+                android:text="Because acromegaly is uncommon and the physical changes occur slowly over many years, the condition sometimes takes a long time to recognize. Untreated, high levels of growth hormone can affect other parts of the body, in addition to your bones. This can lead to serious — sometimes even life-threatening — health problems. But treatment can reduce your risk of complications and significantly improve your symptoms, including the enlargement of your features."
+                android:textColor="@color/black"
+
+                android:textSize="@dimen/_14ssp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/black" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

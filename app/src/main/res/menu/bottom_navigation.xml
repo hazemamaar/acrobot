@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:actionLayout="@layout/fragment_home"
+        android:icon="@drawable/baseline_home_24"
+        android:iconTint="@color/white"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/chatFragment"
+        android:actionLayout="@layout/fragment_chat"
+        android:icon="@drawable/chat"
+        android:iconTint="@color/green"
+        android:title="Chat" />
+
+    <item
+        android:id="@+id/timeLineFragment"
+        android:actionLayout="@layout/fragment_time_line"
+        android:icon="@drawable/timeline"
+        android:iconTint="@color/white"
+        android:title="Time Line" />
+
+
+    <item
+        android:id="@+id/formFragment"
+        android:actionLayout="@layout/fragment_form"
+        android:icon="@drawable/form"
+        android:iconTint="@color/white"
+        android:title="Form" />
+</menu>

@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Phone icon path -->
+    <path
+        android:pathData="M20.487,15.576c-1.356-1.356-2.71-1.359-4.071-0.009l-1.75,1.75c-0.305,0.305-0.776,0.395-1.165,0.221c-1.136-0.501-2.488-1.445-3.91-2.867c-1.422-1.422-2.366-2.773-2.867-3.91c-0.174-0.389-0.084-0.86,0.221-1.165l1.75-1.75c1.35-1.35,1.347-2.715-0.009-4.071l-1.673-1.673c-1.351-1.351-2.716-1.354-4.073-0.006L3.682,3.682c-2.263,2.263-2.017,5.93,0.82,9.697c1.408,1.932,3.407,3.928,5.34,5.34c3.768,2.837,7.434,3.083,9.697,0.82l1.191-1.191c1.348-1.348,1.345-2.722-0.006-4.073L20.487,15.576z"
+        android:strokeAlpha="0.5"
+        android:fillAlpha="0.5">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="2"
+                android:startY="2"
+                android:endX="22"
+                android:endY="22"
+                android:type="linear">
+                <item android:offset="0" android:color="#FF53E88B"/>
+                <item android:offset="1" android:color="#FF15BE77"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

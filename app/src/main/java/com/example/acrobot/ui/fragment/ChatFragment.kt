@@ -1,60 +1,120 @@
 package com.example.acrobot.ui.fragment
 
+import android.content.ContentValues.TAG
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.acrobot.R
+import com.example.acrobot.data.models.Chat
+import com.example.acrobot.databinding.FragmentChatBinding
+import com.example.acrobot.databinding.FragmentLoginBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.ChildEventListener
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ChatFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ChatFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    private lateinit var _binding: FragmentChatBinding
+    val binding get() = _binding
+    var messageAdapter: MessageAdapter? = null
+    lateinit var mChat: MutableList<Chat>
+    private var reference: DatabaseReference? = null
+    private lateinit var sharedPreferences: SharedPreferences
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        sharedPreferences =
+            requireActivity().getSharedPreferences("user", Context.MODE_PRIVATE)
+        setupRecyclerView()
+        binding.imageSend.setOnClickListener {
+            val message=binding.message.text.toString()
+            if (message.isNotEmpty()){
+                sendMessage(
+                    sharedPreferences.getString("name", null)!!,
+                    message
+                    )
+                binding.message.text!!.clear()
+            }
+
         }
+        reference = FirebaseDatabase.getInstance().getReference("Chats")
+        reference!!.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                readMessages()
+            }
+        })
+
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chat, container, false)
+        _binding = FragmentChatBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ChatFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ChatFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+
+    private fun sendMessage(sender: String, msg: String) {
+
+        val reference = FirebaseDatabase.getInstance().reference
+
+        val hashMap: HashMap<String, Any> = hashMapOf()
+        hashMap["sender"] = sender
+        hashMap["message"] = msg
+
+        reference.child("Chats").push().setValue(hashMap)
+
+
+    }
+
+    private fun readMessages() {
+        mChat = arrayListOf()
+
+        reference = FirebaseDatabase.getInstance().getReference("Chats")
+        reference!!.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+
             }
+
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                mChat.clear()
+                for (snapshot: DataSnapshot in dataSnapshot.children) {
+
+                    val chat = snapshot.getValue(Chat::class.java)
+                    mChat.add(chat!!)
+
+                }
+               messageAdapter?.list=mChat
+                messageAdapter?.notifyItemChanged(messageAdapter!!.itemCount-1)
+                binding.recycleMessage.scrollToPosition(messageAdapter!!.itemCount - 1)
+            }
+
+        })
+    }
+    private  fun setupRecyclerView()=binding.apply {
+        this.recycleMessage.apply {
+            messageAdapter = MessageAdapter(requireContext())
+            adapter =messageAdapter
+            layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+
+        }
     }
 }

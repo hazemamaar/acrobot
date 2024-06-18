@@ -46,16 +46,13 @@ class AppModule  {
         interceptor: HttpLoggingInterceptor,
     ): OkHttpClient =
         OkHttpClient.Builder()
-            .connectTimeout(30, TimeUnit.SECONDS)
-            .writeTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
+            .connectTimeout(60, TimeUnit.SECONDS)
+            .writeTimeout(60, TimeUnit.SECONDS)
+            .readTimeout(60, TimeUnit.SECONDS)
             .addInterceptor(interceptor)
             .addInterceptor { chain ->
                 val original: Request = chain.request()
                 val builder: Request.Builder = original.newBuilder()
-//                val token = complexPreferences.getString(TOKEN, "")
-//                val lang="en"
-
 
                 return@addInterceptor chain.proceed(builder.build())
             }

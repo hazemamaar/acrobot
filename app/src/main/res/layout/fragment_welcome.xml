@@ -19,7 +19,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/viewpager_onboard"
         android:layout_marginTop="@dimen/_20sdp"
@@ -27,41 +26,22 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/finish_btn"
-        android:layout_width="240dp"
-        android:layout_height="55dp"
+        android:layout_width="@dimen/_157sdp"
+        android:layout_height="@dimen/_60sdp"
         android:layout_gravity="center"
         android:shadowRadius="5"
-        android:text="متابعه"
+        android:text="Next"
         android:layout_marginTop="50dp"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        app:cornerRadius="@dimen/_20sdp"
+        app:cornerRadius="@dimen/_15sdp"
         android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@id/indicator"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@color/green"
         android:layout_marginBottom="5dp"
-        android:textSize="20sp" />
+        android:fontFamily="@font/abhaya_libre_extrabold"
+        android:textSize="@dimen/_17ssp" />
 
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/skip_btn"
-        android:layout_width="240dp"
-        android:layout_height="55dp"
-        android:layout_gravity="center"
-        android:shadowRadius="5"
-        android:text="تخطي"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        app:cornerRadius="@dimen/_20sdp"
-        android:visibility="visible"
-        app:layout_constraintTop_toBottomOf="@id/finish_btn"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/gray"
-        android:layout_marginBottom="@dimen/_40sdp"
-        android:textSize="20sp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
