@@ -29,7 +29,7 @@ class FormViewModel @Inject constructor(val apiService: IApiService) :ViewModel(
                 val formResponse : FormResponse = call.body()!!
                 formFlow.emit(Resource.Success(formResponse))
             }else{
-                formFlow.emit(Resource.Error("Invalid credentials"))
+                formFlow.emit(Resource.Error("Invalid"))
             }
         }
 

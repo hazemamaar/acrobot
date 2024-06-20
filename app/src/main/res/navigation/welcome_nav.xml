@@ -50,6 +50,9 @@
             app:popUpTo="@+id/welcome_nav"
             app:popUpToInclusive="true"
             />
+        <action
+            android:id="@+id/action_loginFragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -66,4 +69,22 @@
         android:name="com.example.acrobot.ui.activities.AppActivity"
         android:label="activity_app"
         tools:layout="@layout/activity_app" />
+    <fragment
+        android:id="@+id/successPasswordFragment"
+        android:name="com.example.acrobot.ui.fragment.SuccessPasswordFragment"
+        android:label="fragment_succussful_password"
+        tools:layout="@layout/fragment_succussful_password" >
+        <action
+            android:id="@+id/action_successPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.example.acrobot.ui.fragment.ForgetPasswordFragment"
+        android:label="fragment_forget_password"
+        tools:layout="@layout/fragment_forget_password" >
+        <action
+            android:id="@+id/action_forgetPasswordFragment_to_successPasswordFragment"
+            app:destination="@id/successPasswordFragment" />
+    </fragment>
 </navigation>

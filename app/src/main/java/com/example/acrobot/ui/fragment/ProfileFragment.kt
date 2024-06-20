@@ -54,7 +54,7 @@ class ProfileFragment : Fragment() {
         }
         getProfile()
         binding.btnSubmit.setOnClickListener {
-            updateProfile(RegisterModel(binding.inputTextName.text.toString(), email = null, password = null, mobilePhone = binding.inputTextMobilePhone.text.toString()))
+            updateProfile(RegisterModel(binding.inputTextName.text.toString(), email = null, password = null, mobile = binding.inputTextMobilePhone.text.toString()))
         }
         binding.logoutContainer.setOnClickListener {
             editor.remove(Constant.token)

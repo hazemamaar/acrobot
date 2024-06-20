@@ -54,7 +54,8 @@ class RegistrationFragment : Fragment() {
                     RegisterModel(
                         email = email,
                         name=username,
-                        password = password
+                        password = password,
+                        mobile = binding.inputTextMobilePhone.text.toString()
                     )
                 )
                 loginViewModel.registerFlow.onEach {

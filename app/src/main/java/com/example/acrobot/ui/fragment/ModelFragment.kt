@@ -1,4 +1,4 @@
-package com.example.acrobot
+package com.example.acrobot.ui.fragment
 
 import android.Manifest
 import android.app.Activity
@@ -22,11 +22,8 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.navigation.fragment.findNavController
-import com.example.acrobot.databinding.ActivityUploadImageBinding
-import com.example.acrobot.databinding.FragmentAcrobotDialogBinding
 import com.example.acrobot.databinding.FragmentModelBinding
 import com.example.acrobot.ml.CnnModelDisease
-import com.example.acrobot.ui.activities.AppActivity
 import dagger.hilt.android.AndroidEntryPoint
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.ImageProcessor
@@ -78,7 +75,7 @@ class ModelFragment : Fragment() {
             binding.imagePerson.visibility = View.GONE
             binding.closeImage.visibility = View.GONE
             binding.pickFromGallery.visibility = View.VISIBLE
-            binding.pickFromCamera.visibility = View.VISIBLE
+
 
         }
         galleryLauncher =
@@ -92,18 +89,8 @@ class ModelFragment : Fragment() {
                     binding.imagePerson.visibility = View.VISIBLE
                     binding.closeImage.visibility = View.VISIBLE
                     binding.pickFromGallery.visibility = View.GONE
-                    binding.pickFromCamera.visibility = View.GONE
                 }
             }
-
-        // Set up button listeners
-        binding.pickFromCamera.setOnClickListener {
-
-            if (checkPermissions()) {
-                openCamera()
-            }
-
-        }
 
         binding.pickFromGallery.setOnClickListener {
             galleryLauncher.launch("image/*")
@@ -187,7 +174,6 @@ class ModelFragment : Fragment() {
                 binding.imagePerson.visibility = View.VISIBLE
                 binding.closeImage.visibility = View.VISIBLE
                 binding.pickFromGallery.visibility = View.GONE
-                binding.pickFromCamera.visibility = View.GONE
             } else {
                 Toast.makeText(requireContext(), "Image file Not found", Toast.LENGTH_SHORT).show()
             }

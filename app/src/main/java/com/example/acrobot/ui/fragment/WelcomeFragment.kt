@@ -87,7 +87,7 @@ class WelcomeFragment : Fragment() {
     private fun welcomeData():List<WelcomeModel>{
         return listOf(
             WelcomeModel(
-                "KNow your health condition",
+                "Know your health condition",
                 R.drawable.photo1,
                 "For you and the people close to you"
             ),

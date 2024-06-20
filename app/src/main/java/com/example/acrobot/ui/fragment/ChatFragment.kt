@@ -52,7 +52,6 @@ class ChatFragment : Fragment() {
         reference = FirebaseDatabase.getInstance().getReference("Chats")
         reference!!.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
-
             }
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {

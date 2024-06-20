@@ -39,6 +39,16 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         sharedPreferences =
             requireActivity().getSharedPreferences(Constant.user, Context.MODE_PRIVATE)
+        binding.forgetPassword.setOnClickListener {
+            val navOptions = NavOptions.Builder()
+                .setPopUpTo(R.id.loginFragment, true)
+                .build()
+            findNavController().navigate(
+                R.id.action_loginFragment_to_forgetPasswordFragment,
+                savedInstanceState,
+                navOptions
+            )
+        }
         sharedPreferencesEditor=sharedPreferences.edit()
         binding.goToRegistration.setOnClickListener {
             val navOptions = NavOptions.Builder()
